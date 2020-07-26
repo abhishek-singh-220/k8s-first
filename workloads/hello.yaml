@@ -2,13 +2,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: docker-nodejs-demo
-  namespace: demo
+  name: docker-react-app
   labels:
-    app: docker-nodejs-demo
+    app: docker-react-app
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.docker-nodejs-demo: semver:~1.0.0
+    fluxcd.io/tag.abhishek/docker-react-app: semver:~1.0.0
 spec:
   strategy:
     rollingUpdate:
@@ -16,15 +15,15 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: docker-nodejs-demo
+      app: docker-react-app
   template:
     metadata:
       labels:
-        app: docker-nodejs-demo
+        app: docker-react-app
     spec:
       containers:
-      - name: docker-nodejs-demo
-        image: wardviaene/docker-nodejs-demo:1.0.2
+      - name: docker-react-app
+        image: abhishek/docker-react-app:1.0.1
         ports:
-        - name: nodejs-port
-          containerPort: 3000
+        - name: react-port
+          containerPort: 5000
