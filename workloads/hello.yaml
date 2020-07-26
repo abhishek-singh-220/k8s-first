@@ -7,7 +7,7 @@ metadata:
     app: docker-react-app
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.abhishek/docker-react-app: semver:~1.0.0
+    fluxcd.io/tag.abhishekksingh/docker-react-app: semver:~1.0.0
 spec:
   strategy:
     rollingUpdate:
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: docker-react-app
-        image: abhishek/docker-react-app:1.0.1
+        image: abhishekksingh/docker-react-app:1.0.1
         ports:
         - name: react-port
           containerPort: 5000
